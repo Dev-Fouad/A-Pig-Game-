@@ -8,13 +8,19 @@ let btnRoll = document.querySelector('.btn--roll')
 let btnHold = document.querySelector('.btn--hold')
 let DiceEl = document.querySelector('.dice')
 let current0El = document.getElementById('current--0')
+let current1El = document.getElementById('current--1')
+
 
 
 // Starting Conditions
 ScoreOEl.textContent = 0
 Score1El.textContent = 0
-let currentscore = 0
 DiceEl.classList.add('hidden')
+
+
+const scores = [ 0 , 0]
+let currentscore = 0
+let activePlayer = 0
 
 
 // Rolling Dice functionality
@@ -31,9 +37,11 @@ btnRoll.addEventListener('click' , function(){
     if (dice !== 1){
     // if rolled dice is not one, add to the current score
         currentscore = currentscore + dice 
-        current0El.textContent = currentscore
+        document.getElementById(`current--${activePlayer}`).textContent = currentscore
     }else{
-        
+        // Switch to next player
+        activePlayer = activePlayer ===  0 ? 1 : 0;
+        currentscore = 0
     }
 
 
