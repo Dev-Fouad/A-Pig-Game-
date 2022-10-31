@@ -32,6 +32,8 @@ btnRoll.addEventListener('click' , function(){
     // if rolled dice is not one, add to the current score
         currentscore = currentscore + dice 
         current0El.textContent = currentscore
+    }else{
+        
     }
 
 
