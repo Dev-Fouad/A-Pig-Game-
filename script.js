@@ -1,39 +1,38 @@
-'Use strict'
+'Use strict';
 
 // Selecting Elements
-const score0El = document.querySelector('#score--0')
-const score1El = document.getElementById('score--1')
-const current0EL = document.getElementById('current--0')
-const current1EL = document.getElementById('current--1')
-const diceEL = document.querySelector('.dice')
-const btnNew = document.querySelector('.btn--new')
-const btnRoll = document.querySelector('.btn--roll')
-const btnHold = document.querySelector('.btn--hold')
+let ScoreOEl = document.getElementById('score--0')
+let Score1El = document.getElementById('score--1')
+let btnNew = document.querySelector('.btn--new')
+let btnRoll = document.querySelector('.btn--roll')
+let btnHold = document.querySelector('.btn--hold')
+let DiceEl = document.querySelector('.dice')
+let current0El = document.getElementById('current--0')
 
 
-// Starting conditions
-score0El.textContent = 0
-score1El.textContent = 0
-diceEL.classList.add('hidden')
+// Starting Conditions
+ScoreOEl.textContent = 0
+Score1El.textContent = 0
+let currentscore = 0
+DiceEl.classList.add('hidden')
 
-let currentScore = 0
 
-
-//Rolling dice functionality
+// Rolling Dice functionality
 btnRoll.addEventListener('click' , function(){
-    //1. Generating a random dice roll 
-        let dice = Math.trunc(Math.random() * 6) + 1 ;
 
-    // 2. Display dice
-        diceEL.classList.remove('hidden');
-        diceEL.src = `dice-${dice}.png`
+    //1. Generating Random dice roll
+    let dice = Math.trunc(Math.random () * 6) + 1 
 
-    // 3. check for rolled 1: if true, switch to next player
+    //2. Display dice
+    DiceEl.classList.remove('hidden')
+    DiceEl. src = `dice-${dice}.png`
+
+    // 3. Check for rolled one
     if (dice !== 1){
-        //Add dice to current score
-        currentScore = currentScore + dice
-        current0EL.textContent = currentScore
-    }else {
-        //Switch to next player
+    // if rolled dice is not one, add to the current score
+        currentscore = currentscore + dice 
+        current0El.textContent = currentscore
     }
+
+
 })
