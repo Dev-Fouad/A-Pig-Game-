@@ -103,3 +103,6 @@ btnHold.addEventListener( 'click' , function(){
 
 
 btnNew.addEventListener( 'click' , init )
+
+
+// I added a flow-chart image about this Project 
