@@ -105,4 +105,4 @@ btnHold.addEventListener( 'click' , function(){
 btnNew.addEventListener( 'click' , init )
 
 
-// I added a flow-chart image about this Project 
+// I added a flow-chart image about this Project, This game is not not responsive on all screens, only destop Screens alone 
